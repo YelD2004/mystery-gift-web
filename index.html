@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Gift</title>
+    <!-- Cambia la ruta del CSS -->
+    <link rel="stylesheet" href="src/styles/style.css">
+    <style>
+        body {
+            background: #fff;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: #a084ca;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .gift-image {
+            display: block;
+            margin: 0 auto;
+            width: 120px;
+            transition: none;
+            box-shadow: none;
+            animation: none;
+        }
+        .modal {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .modal p {
+            background: #fff;
+            padding: 2rem 3rem;
+            border-radius: 16px;
+            margin: 0;
+            font-size: 1.2rem;
+            color: #a084ca;
+            font-weight: bold;
+            box-shadow: 0 4px 24px #a18cd133;
+            text-align: center;
+        }
+        .modal button {
+            margin: 0 1rem 2rem 1rem;
+            padding: 0.7rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: #a18cd1;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .modal button:hover {
+            background: #7b2ff2;
+        }
+        .modal.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hola mi niña ¿ Quieres ver tu regalo? Si es así dale click a la imagen</h1>
+        <div id="mysteryGiftImage" class="gift-svg" style="width:120px; height:120px; margin:0 auto; cursor:pointer;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="100%" height="100%">
+                <path fill="#002952 " d="M385.5 132.8C393.1 119.9 406.9 112 421.8 112L424 112C446.1 112 464 129.9 464 152C464 174.1 446.1 192 424 192L350.7 192L385.5 132.8zM254.5 132.8L289.3 192L216 192C193.9 192 176 174.1 176 152C176 129.9 193.9 112 216 112L218.2 112C233.1 112 247 119.9 254.5 132.8zM344.1 108.5L320 149.5L295.9 108.5C279.7 80.9 250.1 64 218.2 64L216 64C167.4 64 128 103.4 128 152C128 166.4 131.5 180 137.6 192L96 192C78.3 192 64 206.3 64 224L64 256C64 273.7 78.3 288 96 288L544 288C561.7 288 576 273.7 576 256L576 224C576 206.3 561.7 192 544 192L502.4 192C508.5 180 512 166.4 512 152C512 103.4 472.6 64 424 64L421.8 64C389.9 64 360.3 80.9 344.1 108.4zM544 336L344 336L344 544L480 544C515.3 544 544 515.3 544 480L544 336zM296 336L96 336L96 480C96 515.3 124.7 544 160 544L296 544L296 336z"/>
+            </svg>
+        </div>
+        <div id="questionModal" class="modal hidden">
+            <p>¿Segura que quieres ver tu regalo?</p>
+            <button id="yesBtn">Sí</button>
+            <button id="noBtn">No</button>
+        </div>
+        <div id="noMessageModal" class="modal hidden">
+            <p style="font-size:1.3rem; color:#a084ca;">
+                <span style="font-size:2rem;">😢</span><br>
+                No me amas ¿verdad? Sos malaaa 😢
+            </p>
+            <button id="volverBtn">Volver</button>
+        </div>
+        <p id="message" class="hidden"></p>
+    </div>
+    <!-- Cambia la ruta del JS -->
+    <script src="src/scripts/main.js"></script>
+</body>
+</html>

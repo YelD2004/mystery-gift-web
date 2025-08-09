@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffbe7; /* Blanco cálido igual que el fondo de gift.png.png */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #a084ca; /* Morado suave */
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 2px 8px #e0c3fc;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    display: none;
+}
+
+.gift-image {
+    display: block;
+    margin: 1rem auto 0 auto;
+    width: 120px;
+    transition: transform 0.3s;
+}
+
+.gift-image:hover {
+    transform: scale(1.1) rotate(-10deg);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal p {
+    background: #fff;
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #a084ca; /* Morado suave */
+    font-weight: bold;
+    box-shadow: 0 4px 24px #a18cd133;
+    text-align: center;
+}
+
+.modal button {
+    margin: 0 1rem 2rem 1rem;
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #a18cd1;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modal button:hover {
+    background: #7b2ff2;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.stars-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0; left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: url('https://cdn-icons-png.flaticon.com/512/1828/1828884.png') no-repeat center/contain;
+    opacity: 0.7;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; transform: scale(0.7) rotate(0deg);}
+    50% { opacity: 1; transform: scale(1.2) rotate(20deg);}
+    100% { opacity: 0.5; transform: scale(0.9) rotate(-20deg);}
+}
+
+.gift-svg {
+    animation: bounceGift 1.2s infinite alternate;
+    will-change: transform;
+}
+
+@keyframes bounceGift {
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-12px);}
+}
